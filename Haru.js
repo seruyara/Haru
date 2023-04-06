@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const answerButtons = question.querySelectorAll('#answer-buttons');
     const nextButton = question.querySelector('#next-btn');
     const resultText = question.querySelector('#result-text'); // new line
-  
+
     let currentQuestionIndex = 0;
     let score = 0;
     let movie = [];
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.innerHTML = "Next";
         showQuestion();
     }
-   
+
     function showQuestion(){
         let currentQuestion = questions[currentQuestionIndex];
         let questionNo = currentQuestionIndex +1;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             answerButton.appendChild(button);
         })
     }
-  
+
     fetch('http://localhost:3000/data')   
       .then(response => response.json())
       .then(movie => {
@@ -37,34 +37,38 @@ document.addEventListener('DOMContentLoaded', () => {
         displayMovie();
       })
       .catch(error => console.error(error));
-  
+
     function displayMovie() {
-      let currentCategory = data.category;
-      let currentQuestion;
-        
-      if (currentCategory === 'movie') {
-        currentQuestion = data.questions[currentQuestionIndex];
-      } else if (currentCategory === 'music') {
-        currentQuestion = data.questions[currentQuestionIndex];
-      }
-  
-      question.innerText = currentQuestion.question;
-      answerButtons.forEach((button, index) => {
-        button.innerText = currentQuestion.incorrect_answers[index];
-        if (currentQuestion.correct_answer === button.innerText) {
-          button.innerText = currentQuestion.correct_answer;
-          button.dataset.correct = true;
-        }
-        button.addEventListener('click', selectAnswer);
-      });
-      nextButton.disabled = true;
-      resultText.innerText = '';
+  let currentCategory = data.category;
+  let currentQuestion;
+
+  if (currentCategory === 'movie') {
+    currentQuestion = data.questions[currentQuestionIndex];
+  } else if (currentCategory === 'music') {
+    currentQuestion = data.questions[currentQuestionIndex];
+  }
+
+  question.innerText = currentQuestion.question;
+  answerButtons.forEach((button, index) => {
+    button.innerText = currentQuestion.incorrect_answers[index];
+    if (currentQuestion.correct_answer === button.innerText) {
+      button.innerText = currentQuestion.correct_answer;
+      button.dataset.correct = true;
     }
-  
+    button.addEventListener('click', selectAnswer);
+  });
+  nextButton.disabled = true;
+  resultText.innerText = '';
+
+  // increment the currentQuestionIndex variable
+  currentQuestionIndex++;
+}
+
+
     function selectAnswer(event) {
       const selectedButton = event.target;
       const isCorrect = selectedButton.dataset.correct === 'true';
-  
+
       if (data.category === 'movie') {
         if (isCorrect) {
           currentScore++;
@@ -75,22 +79,22 @@ document.addEventListener('DOMContentLoaded', () => {
       } else if (data.category === 'music') {
         // Add logic for music questions
       }
-  
+
       answerButtons.forEach(button => {
         button.removeEventListener('click', selectAnswer);
       });
       nextButton.disabled = false;
     }
-  
+
     function showResults() {
       let totalQuestions;
-  
+
       if (data.category === 'movie') {
         totalQuestions = data.questions.length;
       } else if (data.category === 'music') {
         // Add logic for music questions
       }
-  
+
       question.innerText = `You scored ${currentScore} out of ${totalQuestions} questions!`;
       answerButtons.forEach(button => {
         button.disabled = true;
@@ -102,9 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       resultText.innerText = '';
     }
-  
+
   });
- //{"text": "", "correct":false},
- //{"text": "", "correct":true},
- //{"text": "", "correct":false},
- //{"text": "", "correct":false}
+ 
