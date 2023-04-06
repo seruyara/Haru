@@ -1,0 +1,105 @@
+{
+    "data": [
+      {
+        "category": "movie",
+        "questions": [
+          {
+            "question": "Daniel Radcliffe became a global star in the film industry due to his performance in which film franchise?",
+            "answers":[
+                {"text": "Ted", "correct":false},
+                {"text": "Harry Potter", "correct":true},
+                {"text": "Spy Kids", "correct":false},
+                {"text": "Pirates of the Caribbean", "correct":false}
+            ]
+          },
+          {
+            "question": "Which movie contains the quote, \"Say hello to my little friend!\"?",
+            "answers": [
+                {"text": "Goodfellas", "correct":false},
+                {"text": "Heat", "correct":false},
+                {"text": "Scarface", "correct":true},
+                {"text": "Reservoir Dogs", "correct":false}
+            ]
+          },
+          {
+            "question": "Who directed the 2015 movie \"The Revenant\"?",
+            "answers": [
+                {"text": "David Finche", "correct":false},
+                {"text": "Alejandro G. Iñárritu", "correct":true},
+                {"text": "Wes Anderson", "correct":false},
+                {"text": "Christopher Nolan", "correct":false}
+            ]
+          },
+          {
+            "question": "Which of the following actors has only been in a Quentin Tarantino directed film once?",
+            "answers": [
+                {"text": "Harvey Keitel", "correct":false},
+                {"text": "Christoph Waltz", "correct":false},
+                {"text": "John Travolta", "correct":true},
+                {"text": "Samuel L. Jackso", "correct":false}
+            ]
+          },
+          {
+            "question": "The 1996 film 'Fargo' is primarily set in which US state?",
+            "answers":[
+                {"text": "Minnesota", "correct":true},
+                {"text": "South Dakot", "correct":false},
+                {"text": "Wisconsin", "correct":false},
+                {"text": "North Dakota", "correct":false}
+            ]
+          }
+        ]
+      },
+      {
+        "category": "music",
+        "questions": [
+          {
+            "question": "Who had a 1969 top 5 hit with the song, 'A Boy Named Sue'?",
+            "answers": [
+                {"text": "Johnny Cash", "correct":true},
+                {"text": "Bob Dylan", "correct":false},
+                {"text": "Willie Nelso", "correct":false},
+                {"text": "Kris Kristofferson", "correct":false}
+            ]
+          },
+          {
+            "question": "What is the name of the album released in 2014 by American band Maroon 5?",
+            "answers": [
+                {"text": "X", "correct":false},
+                {"text": "V", "correct":true},
+                {"text": "IV", "correct":false},
+                {"text": "III", "correct":false}
+            ]
+          },
+          {
+            "question": "What was the name of singer Frank Ocean's second studio album, which was released on August 20, 2016?",
+            "answers": [
+                {"text": "Burgundy", "correct":false},
+                {"text": "Brunette", "correct":false},
+                {"text": "Black", "correct":false},
+                {"text": "Blonde", "correct":true}
+            ]
+          },
+          {
+            "question": "How many strings are there on a cello?",
+            "answers": [
+                {"text": "5", "correct":false},
+                {"text": "4", "correct":true},
+                {"text": "6", "correct":false},
+                {"text": "8", "correct":false}
+            ]
+          },
+          {
+            "question": "\"Hallelujah\" is a song written by which Canadian recording artist?",
+            "answers": [
+                {"text": "Leonard Cohen", "correct":true},
+                {"text": "Ryan Letourneau", "correct":false},
+                {"text": "Justin Biebe", "correct":false},
+                {"text": "Kory Lefkowits", "correct":false}
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
