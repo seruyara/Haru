@@ -2,110 +2,140 @@ document.addEventListener('DOMContentLoaded', () => {
     const question = document.querySelector('#question');
     const answerButtons = question.querySelectorAll('#answer-buttons');
     const nextButton = question.querySelector('#next-btn');
-    const resultText = question.querySelector('#result-text'); // new line
-
+    const resultText = question.querySelector('#result');
+  
     let currentQuestionIndex = 0;
-    let score = 0;
-    let movie = [];
+    let currentScore = 0;
     let data = {};
-
-    function startQuiz(){
-        currentQuestionIndex = 0;
-        score = 0;
-        nextButton.innerHTML = "Next";
-        showQuestion();
+    let category = '';
+  
+    function startQuiz(category) {
+      currentQuestionIndex = 0;
+      currentScore = 0;
+      nextButton.innerText = 'Next';
+      resultText.innerText = '';
+      data = getData(category);
+      displayQuestion();
+    }
+  
+    function getData(category) {
+      switch (category) {
+        case 'movie':
+          return movieData;
+        case 'music':
+          return musicData;
+        case 'video game':
+          return videoGameData;
+      }
     }
 
-    function showQuestion(){
-        let currentQuestion = questions[currentQuestionIndex];
-        let questionNo = currentQuestionIndex +1;
-        questionElement.innerHTML =questionNo + ". " + currentQuestion.
-        question;
-
-        currentQuestion.answers.forEach(answer => {
-            const button = document.createElement("button");
-            button.innerHTML = answer.text;
-            button.classList.add("btn");
-            answerButton.appendChild(button);
-        })
+    fetch('http://localhost:3000/data')
+  .then(response => response.json())
+  .then(data => {
+    // Call the function to display the questions based on the category
+    if (data.category === 'movie') {
+      displayMovieQuestions(data);
+    } else if (data.category === 'music') {
+      displayMusicQuestions(data);
+    } else if (data.category === 'video game') {
+      displayVideoGameQuestions(data);
+    } else {
+      console.error('Invalid category');
     }
+  })
+  .catch(error => console.error(error));
 
-    fetch('http://localhost:3000/data')   
-      .then(response => response.json())
-      .then(movie => {
-        data = movie[0];
-        displayMovie();
-      })
-      .catch(error => console.error(error));
-
-    function displayMovie() {
-  let currentCategory = data.category;
-  let currentQuestion;
-
-  if (currentCategory === 'movie') {
-    currentQuestion = data.questions[currentQuestionIndex];
-  } else if (currentCategory === 'music') {
-    currentQuestion = data.questions[currentQuestionIndex];
+  async function getData(category) {
+    try {
+      const response = await fetch('db.json');
+      const data = await response.json();
+      
+      switch (category) {
+        case 'movie':
+          return data.movieQuestions;
+        case 'music':
+          return data.musicQuestions;
+        case 'video game':
+          return data.videoGameQuestions;
+        default:
+          console.error('Invalid category');
+      }
+    } catch (error) {
+      console.error(error);
+    }
   }
-
-  question.innerText = currentQuestion.question;
-  answerButtons.forEach((button, index) => {
-    button.innerText = currentQuestion.incorrect_answers[index];
-    if (currentQuestion.correct_answer === button.innerText) {
-      button.innerText = currentQuestion.correct_answer;
-      button.dataset.correct = true;
+  
+    function displayQuestion() {
+      const currentQuestion = data.questions[currentQuestionIndex];
+  
+      question.innerHTML = `
+        <div class="question-header">
+          <h2>${currentQuestion.question}</h2>
+        </div>
+        <div class="answer-options">
+          ${currentQuestion.answers.map(answer => `
+            <button class="btn" data-correct="${answer.correct}">
+              ${answer.text}
+            </button>
+          `).join('')}
+        </div>
+      `;
+  
+      answerButtons.forEach(button => {
+        button.addEventListener('click', selectAnswer);
+      });
+      nextButton.disabled = true;
     }
-    button.addEventListener('click', selectAnswer);
-  });
-  nextButton.disabled = true;
-  resultText.innerText = '';
-
-  // increment the currentQuestionIndex variable
-  currentQuestionIndex++;
-}
-
-
+  
     function selectAnswer(event) {
       const selectedButton = event.target;
       const isCorrect = selectedButton.dataset.correct === 'true';
-
-      if (data.category === 'movie') {
-        if (isCorrect) {
-          currentScore++;
-          resultText.innerText = 'Correct!';
-        } else {
-          resultText.innerText = 'Incorrect.';
-        }
-      } else if (data.category === 'music') {
-        // Add logic for music questions
+  
+      if (isCorrect) {
+        currentScore++;
+        resultText.innerText = 'Correct!';
+      } else {
+        resultText.innerText = 'Incorrect.';
       }
-
+  
       answerButtons.forEach(button => {
         button.removeEventListener('click', selectAnswer);
       });
       nextButton.disabled = false;
     }
-
+  
     function showResults() {
-      let totalQuestions;
-
-      if (data.category === 'movie') {
-        totalQuestions = data.questions.length;
-      } else if (data.category === 'music') {
-        // Add logic for music questions
-      }
-
-      question.innerText = `You scored ${currentScore} out of ${totalQuestions} questions!`;
-      answerButtons.forEach(button => {
-        button.disabled = true;
+      const totalQuestions = data.questions.length;
+  
+      question.innerHTML = `
+        <div class="question-header">
+          <h2>You scored ${currentScore} out of ${totalQuestions} questions!</h2>
+        </div>
+        <button class="btn" id="restart-btn">Restart</button>
+      `;
+  
+      const restartButton = question.querySelector('#restart-btn');
+      restartButton.addEventListener('click', () => {
+        startQuiz(category);
       });
-      nextButton.innerText = 'Restart';
-      nextButton.addEventListener('click', () => {
-        resetState();
-        displayMovie();
-      });
-      resultText.innerText = '';
     }
-
+  
+    // Event listeners
+    document.querySelectorAll('.category-btn').forEach(button => {
+      button.addEventListener('click', event => {
+        category = event.target.dataset.category;
+        startQuiz(category);
+      });
+    });
+  
+    nextButton.addEventListener('click', () => {
+      currentQuestionIndex++;
+  
+      if (currentQuestionIndex < data.questions.length) {
+        displayQuestion();
+      } else {
+        showResults();
+      }
+    });
   });
- 
+  
