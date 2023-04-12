@@ -11,18 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
       currentQuestionIndex = 0;
       score = 0;
       nextButton.innerHTML = "Next";
+      displayMusic();
+    }
+  
+    function resetState() {
+      nextButton.style.display = "none";
+      answer1Buttons.forEach(button => {
+        button.classList.remove('correct', 'incorrect');
+        button.disabled = false;
+      });
     }
   
     fetch('http://localhost:3000/music')
       .then(response => response.json())
       .then(data => {
         music = data;
-        displayMusic();
+        startQuiz();
       })
       .catch(error => console.error(error))
   
     function displayMusic() {
-        resetState();
+      resetState();
       let currentQuestion = music[currentQuestionIndex];
       let questionNo = currentQuestionIndex + 1;
       question1Element.innerHTML = questionNo + ". " + currentQuestion.question;
@@ -35,59 +44,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-    function resetState(){
-        nextButton.style.display = "none";
-    }
-
+  
     function selectAnswer(selectedAnswerIndex) {
       const selectedButton = answer1Buttons[selectedAnswerIndex];
-  
-      // Get the current question from the quiz data
       const currentQuestion = music[currentQuestionIndex];
-  
-      // Get the index of the correct answer
       const correctAnswerIndex = currentQuestion.correct_answer;
-  
-      // Check if the selected answer is correct
       if (selectedAnswerIndex === correctAnswerIndex) {
         selectedButton.classList.add('correct');
         score++;
       } else {
         selectedButton.classList.add('incorrect');
-        // Highlight the correct answer
         answer1Buttons[correctAnswerIndex].classList.add('correct');
       }
-  
-      // Disable all answer buttons
       answer1Buttons.forEach(button => {
         button.disabled = true;
       });
+      nextButton.style.display = "block";
+    }
   
-      // Show the next button
-      nextButton.style.display="block";
+    function showScore() {
+      resetState();
+      question1Element.innerHTML = `You got ${score} out of ${music.length}!`;
+      nextButton.innerHTML = "Play Again?";
+      nextButton.style.display = "block";
     }
-
-    function showScore(){
-        resetState();
+  
+    function handleNextButton() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < music.length) {
+        displayMusic();
+      } else {
+        showScore()
+      }
     }
-
-    function handleNextButton(){
-        currentQuestionIndex++;
-        if(currentQuestionIndex < qustions.length){
-            displayMusic();
-        }else{
-            showScore()
-        }
-    }
-
-    nextButton.addEventListener("click", ()=>{
-        if (currentQuestionIndex > qustions.length){
-            handleNextButton();
-        }else {
-            startQuiz();
-        }
+  
+    nextButton.addEventListener("click", () => {
+      if (currentQuestionIndex < music.length) {
+        handleNextButton();
+      } else {
+        startQuiz();
+      }
     })
-
-    startQuiz(); // Call the function to display the first question
+  
   });
   
