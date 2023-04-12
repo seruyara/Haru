@@ -81,3 +81,11 @@ body{
     cursor: pointer;
    
 }
+
+.correct{
+    background: #18ae65;
+}
+
+.incorrect{
+    background:#9e1e0d ;
+}
