@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       answer1Buttons.forEach((button, index) => {
         button.innerHTML = currentQuestion.answers[index];
+        
       });
     }
   

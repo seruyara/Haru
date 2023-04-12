@@ -2,75 +2,80 @@
     "music": [
       {
         "question": "Who had a 1969 top 5 hit with the song, 'A Boy Named Sue'?",
-        "correct_answer": "Johnny Cash",
-        "incorrect_answers": ["Bob Dylan", "Willie Nelson", "Kris Kristofferson"]
+        "answers": ["Bob Dylan","Johnny Cash", "Willie Nelson", "Kris Kristofferson"],
+        "correct_answer": 1
       },
       {
         "question": "What is the name of the album released in 2014 by American band Maroon 5?",
-        "correct_answer": "V",
-        "incorrect_answers": ["X", "III", "IV"]
+        "answers": ["X", "V", "III", "IV"],
+        "correct_answer": 1
       },
       {
         "question": "What was the name of singer Frank Ocean's second studio album, which was released on August 20, 2016?",
-        "correct_answer": "Blonde",
-        "incorrect_answers": ["Brunette", "Black", "Burgundy"]
+        "answers": ["Brunette", "Black", "Blonde", "Burgundy"],
+        "correct_answer": 2
       },
       {
         "question": "How many strings are there on a cello?",
-        "correct_answer": "4",
-        "incorrect_answers": ["5", "6", "8"]
+        "answers": [ "4","5", "6", "8"],
+        "correct_answer": 0
       },
       {
         "question": "\"Hallelujah\" is a song written by which Canadian recording artist?",
-        "correct_answer": "Leonard Cohen",
-        "incorrect_answers": ["Kory Lefkowits", "Ryan Letourneau", "Justin Bieber"]
+        "answers": ["Kory Lefkowits", "Ryan Letourneau","Leonard Cohen", "Justin Bieber"],
+        "correct_answer": 2
       }
     ],
     "Video Games": [
         {
             "question": "Which Game Boy from the Game Boy series of portable video game consoles was released first?",
-            "correct_answer": "Game Boy Color",
-            "incorrect_answers": [
+            "answers": [
                 "Game Boy Advance",
                 "Game Boy Micro",
+                "Game Boy Color",
                 "Game Boy Advance SP"
-            ]
+            ],
+            "correct_answer": 2
         },
         {
             "question": "What is the first weapon you acquire in Half-Life?",
-            "correct_answer": "A crowbar",
-            "incorrect_answers": [
+            "answers": [
+                "A crowbar",
                 "A pistol",
                 "The H.E.V suit",
                 "Your fists"
-            ]
+            ],
+            "correct_answer": 0
         },
         {
             "question": "Which of these is not a wonder weapon in &quot;Call Of Duty: Zombies&quot;?",
-            "correct_answer": "R115 Resonator",
-            "incorrect_answers": [
+            "answers": [
                 "GKZ-45 Mk3",
                 "Ray Gun",
-                "Scavenger"
-            ]
+                "Scavenger",
+                "R115 Resonator"
+            ],
+            "correct_answer": 3
         },
         {
             "question": "In which year was League of Legends released?",
-            "correct_answer": "2009",
-            "incorrect_answers": [
+            "answers": [
                 "2010",
+                "2009",
                 "2003",
                 "2001"
-            ]
+            ],
+            "correct_answer": 1
         },
         {
             "question": "What is the name of the adventurer you meet at the mines in Stardew Valley?",
-            "correct_answer": "Marlon",
-            "incorrect_answers": [
+            "answers": [
                 "Marnie",
+                "Marvin",
                 "Morris",
-                "Marvin"
-            ]
+                "Marlon"
+            ],
+            "correct_answer": 3
         }
     ]
   }
