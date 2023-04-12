@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
       currentQuestionIndex = 0;
       score = 0;
       nextButton.innerHTML = "Next";
-      showQuestion();
     }
   
     fetch('http://localhost:3000/music')
@@ -23,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       .catch(error => console.error(error))
   
     function displayMusic() {
+        resetState();
       let currentQuestion = music[currentQuestionIndex];
       let questionNo = currentQuestionIndex + 1;
       question1Element.innerHTML = questionNo + ". " + currentQuestion.question;
@@ -35,7 +35,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     }
-  
+    function resetState(){
+        nextButton.style.display = "none";
+    }
+
     function selectAnswer(selectedAnswerIndex) {
       const selectedButton = answer1Buttons[selectedAnswerIndex];
   
@@ -61,9 +64,30 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   
       // Show the next button
-      nextButton.classList.remove('hide');
+      nextButton.style.display="block";
     }
-  
+
+    function showScore(){
+        resetState();
+    }
+
+    function handleNextButton(){
+        currentQuestionIndex++;
+        if(currentQuestionIndex < qustions.length){
+            displayMusic();
+        }else{
+            showScore()
+        }
+    }
+
+    nextButton.addEventListener("click", ()=>{
+        if (currentQuestionIndex > qustions.length){
+            handleNextButton();
+        }else {
+            startQuiz();
+        }
+    })
+
     startQuiz(); // Call the function to display the first question
   });
   
