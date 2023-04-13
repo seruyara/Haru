@@ -114,15 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentQuestion = videoGames[currentQuestionIndex2];
         const correctAnswerIndex = currentQuestion.correct_answer;
         if (selectedAnswerIndex === correctAnswerIndex) {
+          selectedButton.classList.add('correct');
           score2++;
-        }
-        setStatusClass(selectedButton, selectedAnswerIndex === correctAnswerIndex);
-        Array.from(answer2Buttons).forEach(button => {
-          setStatusClass(button, button.dataset.answer === currentQuestion.answers[correctAnswerIndex]);
-          button.disabled = true;
-        });
-        showScore2();
-        handleNextButton2();
+        } else {
+            selectedButton.classList.add('incorrect');
+            answer2Buttons[correctAnswerIndex].classList.add('correct');
+          }
+          answer1Buttons.forEach(button => {
+            button.disabled = true;
+          });
+          nextButton2.style.display = "block";
       }
       
       function showScore1() {
