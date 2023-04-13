@@ -26,55 +26,30 @@
         "correct_answer": 2
       }
     ],
-    "Video Games": [
+    "VideoGames": [
         {
             "question": "Which Game Boy from the Game Boy series of portable video game consoles was released first?",
-            "answers": [
-                "Game Boy Advance",
-                "Game Boy Micro",
-                "Game Boy Color",
-                "Game Boy Advance SP"
-            ],
+            "answers": ["Game Boy Advance","Game Boy Micro","Game Boy Color","Game Boy Advance SP"],
             "correct_answer": 2
         },
         {
             "question": "What is the first weapon you acquire in Half-Life?",
-            "answers": [
-                "A crowbar",
-                "A pistol",
-                "The H.E.V suit",
-                "Your fists"
-            ],
+            "answers": ["A crowbar","A pistol","The H.E.V suit","Your fists"],
             "correct_answer": 0
         },
         {
             "question": "Which of these is not a wonder weapon in &quot;Call Of Duty: Zombies&quot;?",
-            "answers": [
-                "GKZ-45 Mk3",
-                "Ray Gun",
-                "Scavenger",
-                "R115 Resonator"
-            ],
+            "answers": ["GKZ-45 Mk3","Ray Gun","Scavenger","R115 Resonator"],
             "correct_answer": 3
         },
         {
             "question": "In which year was League of Legends released?",
-            "answers": [
-                "2010",
-                "2009",
-                "2003",
-                "2001"
-            ],
+            "answers": ["2010","2009","2003","2001"],
             "correct_answer": 1
         },
         {
             "question": "What is the name of the adventurer you meet at the mines in Stardew Valley?",
-            "answers": [
-                "Marnie",
-                "Marvin",
-                "Morris",
-                "Marlon"
-            ],
+            "answers": ["Marnie","Marvin","Morris","Marlon"],
             "correct_answer": 3
         }
     ]

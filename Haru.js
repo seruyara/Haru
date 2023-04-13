@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch(error => console.error(error))
   
-  fetch('http://localhost:3000/Video Games')
+  fetch('http://localhost:3000/VideoGames')
     .then(response => response.json())
     .then(data => {
         videoGames = data;
@@ -145,20 +145,45 @@ document.addEventListener('DOMContentLoaded', () => {
         restartButton2.addEventListener("click", restartQuiz2);
       }
       
-      function handleNextButtonFunctions() {
-        if (currentQuestionIndex1 < music.length - 1) {
-          showQuestion1(++currentQuestionIndex1);
-        } else if (currentQuestionIndex1 === music.length - 1) {
+      function handleNextButton1() {
+        currentQuestionIndex1++;
+        if (currentQuestionIndex1 < music.length) {
+          displayMusic();
+        } else {
           showScore1();
-        }
-      
-        if (currentQuestionIndex2 < videoGames.length - 1) {
-          showQuestion2(++currentQuestionIndex2);
-        } else if (currentQuestionIndex2 === videoGames.length - 1) {
-          showScore2();
         }
       }
       
-      nextButton.addEventListener("click", handleNextButtonFunctions);
+      function handleNextButton2() {
+        currentQuestionIndex2++;
+        if (currentQuestionIndex2 < videoGames.length) {
+          displayVideoGames();
+        } else {
+          showScore2();
+        }
+      }
+      nextButton1 = document.getElementById('next-btn-1');
+      nextButton1.addEventListener('click', handleNextButton1);
+      
+      function handleNextButton1() {
+        if (currentQuestionIndex1 < music.length - 1) {
+          currentQuestionIndex1++;
+          setNextQuestion1();
+        } else {
+          showScore1();
+        }
+      }
+      
+      nextButton2 = document.getElementById('next-btn-2');
+      nextButton2.addEventListener('click', handleNextButton2);
+      
+      function handleNextButton2() {
+        if (currentQuestionIndex2 < videoGames.length - 1) {
+          currentQuestionIndex2++;
+          setNextQuestion2();
+        } else {
+          showScore2();
+        }
+      }
       
     })  
