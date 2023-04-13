@@ -155,6 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       
+      nextButton1.addEventListener("click", () => {
+        if (currentQuestionIndex1 < music.length) {
+          handleNextButton1();
+        } else {
+          startQuiz1();
+        }
+      });
+      
       function handleNextButton2() {
         currentQuestionIndex2++;
         if (currentQuestionIndex2 < videoGames.length) {
@@ -163,28 +171,13 @@ document.addEventListener('DOMContentLoaded', () => {
           showScore2();
         }
       }
-      nextButton1 = document.getElementById('next-btn-1');
-      nextButton1.addEventListener('click', handleNextButton1);
       
-      function handleNextButton1() {
-        if (currentQuestionIndex1 < music.length - 1) {
-          currentQuestionIndex1++;
-          setNextQuestion1();
+      nextButton2.addEventListener("click", () => {
+        if (currentQuestionIndex2 < videoGames.length) {
+          handleNextButton2();
         } else {
-          showScore1();
+          startQuiz2();
         }
-      }
-      
-      nextButton2 = document.getElementById('next-btn-2');
-      nextButton2.addEventListener('click', handleNextButton2);
-      
-      function handleNextButton2() {
-        if (currentQuestionIndex2 < videoGames.length - 1) {
-          currentQuestionIndex2++;
-          setNextQuestion2();
-        } else {
-          showScore2();
-        }
-      }
+      });
       
     })  
