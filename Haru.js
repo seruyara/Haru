@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       displayVideoGames(); // Call the function to display the first question
     }
     
-    function resetState1() {
+    function resetState1() {          
       nextButton1.style.display = "none";
       answer1Buttons.forEach(button => {
         button.classList.remove('correct', 'incorrect');

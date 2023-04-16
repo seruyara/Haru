@@ -1,5 +1,5 @@
-# Haru
-### Author : SHEILA SERUYA MBALO 20/03/2023
+# Haru Quizzes
+# SHEILA SERUYA MBALO 20/03/2023
 ****
 ## Project Description
 I Created an app that has a list of questions and answers in a db.json file which i fetched thruogh javascript in order to
@@ -33,12 +33,20 @@ I Created an app that has a list of questions and answers in a db.json file whic
 * Open the folder location on terminal and use the following command to run app:
 
 ## How To Run It
+- Clone repository
+- Run using liveserver
+- Open the terminal and run json-server --watch db.json
+- Click the live link to get to the webpage
+- Click on the navigation to either play the music or video game quiz 
 
 *****
 ## Live Link
 Or you can access the web application directly via this [LINK.](http://127.0.0.1:5500/Haru.html)
 *****
 ## Dependencies
+Youtube
+Snapchat AI
+ChatGPT
 
 *****
 ## Technologies Used
