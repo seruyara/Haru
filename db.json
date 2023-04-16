@@ -1,55 +1,55 @@
 {
     "music": [
       {
-        "question": "Who had a 1969 top 5 hit with the song, 'A Boy Named Sue'?",
-        "answers": ["Bob Dylan","Johnny Cash", "Willie Nelson", "Kris Kristofferson"],
+        "question": "Who is the lead singer of the band Coldplay'?",
+        "answers": ["Phil Harvey","Chris Martin", "Will Champion", "Jonny Buckland"],
         "correct_answer": 1
       },
       {
-        "question": "What is the name of the album released in 2014 by American band Maroon 5?",
-        "answers": ["X", "V", "III", "IV"],
+        "question": "what is the name of the first album released by Taylor Swift?",
+        "answers": ["Midnights", "Taylor Swift", "Bad blood", "Fearless"],
         "correct_answer": 1
       },
       {
-        "question": "What was the name of singer Frank Ocean's second studio album, which was released on August 20, 2016?",
-        "answers": ["Brunette", "Black", "Blonde", "Burgundy"],
+        "question": "What was the name of the BTS song that topped the Billboards Hot 100 chart for several weeks in 2020?",
+        "answers": ["Butter", "Permission To Dance", "Dynamite", "Baepsae"],
         "correct_answer": 2
       },
       {
-        "question": "How many strings are there on a cello?",
-        "answers": [ "4","5", "6", "8"],
+        "question": "What is the name of the song that earned Rihanna her first Grammy Award?",
+        "answers": [ "Umbrella","Pour it up", "BBHMM", "Rude Boy"],
         "correct_answer": 0
       },
       {
-        "question": "\"Hallelujah\" is a song written by which Canadian recording artist?",
-        "answers": ["Kory Lefkowits", "Ryan Letourneau","Leonard Cohen", "Justin Bieber"],
+        "question": "What is Drake's real name?",
+        "answers": ["Nicky Hendrix", "Drizzy Drakkardnoir","Aubery Drake Graham", "Champagne Papi"],
         "correct_answer": 2
       }
     ],
     "VideoGames": [
         {
-            "question": "Which Game Boy from the Game Boy series of portable video game consoles was released first?",
-            "answers": ["Game Boy Advance","Game Boy Micro","Game Boy Color","Game Boy Advance SP"],
+            "question": "What is the name of the Italian plumber who stars in the Super Mario Bros. Video game series?",
+            "answers": ["Luigi","Marlon","Mario","Bowser"],
             "correct_answer": 2
         },
         {
-            "question": "What is the first weapon you acquire in Half-Life?",
-            "answers": ["A crowbar","A pistol","The H.E.V suit","Your fists"],
-            "correct_answer": 0
-        },
-        {
-            "question": "Which of these is not a wonder weapon in &quot;Call Of Duty: Zombies&quot;?",
-            "answers": ["GKZ-45 Mk3","Ray Gun","Scavenger","R115 Resonator"],
+            "question": "What is the name of the popular sandbox video game that was created by Markus Persson?",
+            "answers": ["Lego","PubG","Arena of Valor","Minecraft"],
             "correct_answer": 3
         },
         {
-            "question": "In which year was League of Legends released?",
-            "answers": ["2010","2009","2003","2001"],
+            "question": "What is the name of the virtual currency used in Fortnite?",
+            "answers": ["V-Bucks","F-Bucks","Nite cash","krypto currency"],
+            "correct_answer": 0
+        },
+        {
+            "question": "What is the name of of the game mode in PUBG that allows players to fight against hordes of zombies?",
+            "answers": ["Battle Mode","Zombie Mode","War Mode","Killspree Mode"],
             "correct_answer": 1
         },
         {
-            "question": "What is the name of the adventurer you meet at the mines in Stardew Valley?",
-            "answers": ["Marnie","Marvin","Morris","Marlon"],
+            "question": "What is the name of the fictional city where Grand Theft Auto V takes place?",
+            "answers": ["San Andreas","San Fierro","Las Venturas","Los Santos"],
             "correct_answer": 3
         }
     ]

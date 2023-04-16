@@ -2,7 +2,10 @@
 ### Author : SHEILA SERUYA MBALO 20/03/2023
 ****
 ## Project Description
-
+I Created an app that has a list of questions and answers in a db.json file which i fetched thruogh javascript in order to
+ display the first question and answer choices on the screen which allows the user to select an answer choice provided to you by eventListeners, the app then
+ check if the user's answer is correct by turning green or red if wrong and display feedback.You can then move on to the next question and repeat the above steps until all        questions have been answered.
+ After all that it displays the user's score and allow them to play again if they want to.
 
 ******
 
@@ -33,7 +36,7 @@
 
 *****
 ## Live Link
-Or you can access the web application directly via this [LINK.](http://127.0.0.1:5500/index.html)
+Or you can access the web application directly via this [LINK.](http://127.0.0.1:5500/Haru.html)
 *****
 ## Dependencies
 

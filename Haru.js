@@ -127,23 +127,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       
       function showScore1() {
-        quizContainer1.innerHTML = `
-          <h1>Music Trivia Quiz Results</h1>
-          <p>You scored ${score1} out of ${music.length} questions.</p>
-          <button id="restart-btn-1">Restart Quiz</button>
-        `;
-        const restartButton1 = document.getElementById("restart-btn-1");
-        restartButton1.addEventListener("click", restartQuiz1);
+        resetState1();
+        question1Element.innerHTML = `You got ${score1} out of ${music.length}!`;
+        nextButton1.innerHTML = "Play Again?";
+        nextButton1.style.display = "block";
       }
       
       function showScore2() {
-        quizContainer2.innerHTML = `
-          <h1>Video Game Trivia Quiz Results</h1>
-          <p>You scored ${score2} out of ${videoGames.length} questions.</p>
-          <button id="restart-btn-2">Restart Quiz</button>
-        `;
-        const restartButton2 = document.getElementById("restart-btn-2");
-        restartButton2.addEventListener("click", restartQuiz2);
+        resetState2();
+        question2Element.innerHTML = `You got ${score2} out of ${videoGames.length}!`;
+        nextButton2.innerHTML = "Play Again?";
+        nextButton2.style.display = "block";
       }
       
       function handleNextButton1() {
