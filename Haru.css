@@ -117,16 +117,6 @@ nav ul li a:hover::after{
     transition: all o.3s;
 }
 
-
-.btn:hover:not([disabled]){
-    background: #185eae;
-    color: #fff;
-}
-
-btn:disabled{
-    cursor: no-drop;
-}
-
 #next-btn-1{
     background: crimson;
     color: aliceblue;
