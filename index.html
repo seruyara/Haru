@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Haru Quizes</title>
-    <link rel="stylesheet" href="Haru.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Sono:wght@300;600&display=swap" rel="stylesheet">
@@ -57,6 +57,31 @@
     </div>
    </div>
      
-    <script src="Haru.js"></script>
+    <script src="index.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyDg6CIKvLikEtgQL-tQmo7UijhUsR3FlWM",
+          authDomain: "haru-quizzes.firebaseapp.com",
+          projectId: "haru-quizzes",
+          storageBucket: "haru-quizzes.appspot.com",
+          messagingSenderId: "336296043547",
+          appId: "1:336296043547:web:dc2c015b77c64e65e984be",
+          measurementId: "G-4CEHPTFN3G"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
 </body>
 </html>
+
+

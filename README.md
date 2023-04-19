@@ -44,10 +44,10 @@ I Created an app that has a list of questions and answers in a db.json file whic
 Or you can access the web application directly via this [LINK.](http://127.0.0.1:5500/Haru.html)
 *****
 ## Dependencies
+Google fonts
 Youtube
 Snapchat AI
 ChatGPT
-
 *****
 ## Technologies Used
 1. HTML
