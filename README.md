@@ -41,7 +41,7 @@ I Created an app that has a list of questions and answers in a db.json file whic
 
 *****
 ## Live Link
-Or you can access the web application directly via this [LINK.](http://127.0.0.1:5500/Haru.html)
+Or you can access the web application directly via this [LINK.](https://seruyara.github.io/Haru/)
 *****
 ## Dependencies
 Google fonts
